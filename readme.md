@@ -2,16 +2,24 @@
 
 Wes Bos [Learn Node Course](https://learnnode.com)
 
+Useful Node Refresher
+
+[Turing Express and Postgresql Lesson](http://frontend.turing.io/lessons/module-4/knex-postgres)
+
 ## About
 
 Full stack application using Node and MongoDB on the backend.
 
-## Technology
+## Technologies
 
-* [Node](https://nodejs.org/en/) - a JavaScript runtime built on Chrome’s V8 JavaScript engine that uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
+* [Node](https://nodejs.org/en/) -- JavaScript runtime built on Chrome’s V8 JavaScript engine that uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
 * [Express](https://expressjs.com/) -- A light-weight web application framework to help organize a web application into an MVC architecture on the server side.
 * [MongoDB](https://www.mongodb.com/) -- A NoSQL, cross-platform document-oriented database program.
   * [mLab](https://mlab.com/) -- hosted DBaaS recommended by Wes Bos
+* [Passport JS](http://www.passportjs.org/) -- Authentication middleware for Node.js
+* [Pug JS](https://pugjs.org/api/getting-started.html) --  High-performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers
+* [Sass](https://sass-lang.com/) -- CSS preprocessor
+
 
 ## Setup
 
