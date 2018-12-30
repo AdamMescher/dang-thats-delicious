@@ -4,10 +4,6 @@ const mongoose = require('mongoose');
 const Store = mongoose.model('Store');
 
 exports.homePage = (request, response) => {
-    request.flash('error', 'Something Happened!')
-    request.flash('info', 'Something Happened!')
-    request.flash('warning', 'Something Happened!')
-    request.flash('success', 'Something Happened!')
     response.render('index');
 }
 
@@ -19,4 +15,14 @@ exports.createStore = async (request, response) => {
     const store = await (new Store(request.body)).save();
     request.flash('success', `Successfully created ${store.name}. Care to leave a review?`);
     response.redirect(`/store/${store.slug}`);
+}
+
+exports.getStores = async (request, response) => {
+    // 1. query database for a list of all stores
+    const stores = await Store.find();
+    console.log(stores);
+    response.render('stores', {
+        title: 'Stores',
+        stores
+     });
 }
