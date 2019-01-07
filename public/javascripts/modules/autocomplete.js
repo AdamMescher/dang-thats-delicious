@@ -4,7 +4,14 @@ function autocomplete(input, latitudeInput, longitudeInput) {
 
     dropdown.addListener('place_changed', () => {
         const place = dropdown.getPlace()
-        console.log(place);
+        latitudeInput.value = place.geometry.location.lat()
+        longitudeInput.value = place.geometry.location.lng()
+    })
+
+    input.on('keydown', (e) => {
+        if (e.keyCode === 13) {
+            e.preventDefault()
+        }
     })
 }
 
