@@ -4,8 +4,8 @@ const storeController = require('../controllers/storeController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', catchErrors(storeController.getStores));
+router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
 router.get('/stores', catchErrors(storeController.getStores));
-router.get('/stores/:id', catchErrors(storeController.getStore));
 router.get('/add', (storeController.addStore));
 router.post(
     '/add',

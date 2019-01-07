@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
-const Store = mongoose.model('Store');
 const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
+const Store = mongoose.model('Store');
 
 const multerOptions = {
     storage: multer.memoryStorage(),
@@ -43,9 +43,11 @@ exports.createStore = async (request, response) => {
 
 exports.getStoreBySlug = async (request, response) => {
     const store = await Store.findOne({ slug: request.params.slug });
-    if (!store) return next();
+    if (!store) {
+        next();
+        return;
+    }
     response.render('store', {store, title: store.name})
-    response.redirect(`store/${store.slug}`)
 }
 
 exports.getStores = async (request, response) => {
