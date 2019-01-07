@@ -20,9 +20,19 @@ exports.createStore = async (request, response) => {
 exports.getStores = async (request, response) => {
     // 1. query database for a list of all stores
     const stores = await Store.find();
-    console.log(stores);
-    response.render('stores', {
-        title: 'Stores',
-        stores
-     });
+    response.render('stores', { title: 'Stores', stores });
+}
+
+exports.editStore = async (request, response) => {
+    const store = await Store.findOne({ _id: request.params.id });
+    response.render('editStore', { title: `Edit ${store.name}`, store });
+    // response.render('editStore', {title: `Edit ${store.name}`, store});
+}
+
+exports.updateStore = async (request, response) => {
+    // .findOneAndUpdate(query, data, options)
+    const store = await Store.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true, runValidators: true}).exec();
+    response.json(store)
+    // request.flash('success', `Successfully updated <strong>${store.name}</strong>. <a href="/stores/${store.slug}">View Store →</a>`)
+    // response.redirect(`/stores/${store._id}/edit`);
 }
