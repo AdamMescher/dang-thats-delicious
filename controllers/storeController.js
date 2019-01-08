@@ -66,3 +66,9 @@ exports.updateStore = async (request, response) => {
     request.flash('success', `Successfully updated <strong>${store.name}</strong>. <a href="/stores/${store.slug}">View Store →</a>`);
     response.redirect(`/stores/${store._id}/edit`);
 }
+
+exports.getStoresByTag = async (request, response) => {
+    const tags = await Store.getTagsList();
+    const tag = request.params.tag;
+    response.render('tags', { tags, title: 'Tags', tag })
+}
