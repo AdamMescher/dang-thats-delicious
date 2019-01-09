@@ -9,7 +9,7 @@ exports.register = (request, response) => {
 };
 
 exports.validateRegister = (request, response, next) => {
-    request.checkBock('name', 'You must supply a name!').notEmpty();
+    request.checkBody('name', 'You must supply a name!').notEmpty();
     request.sanitizeBody('name');
     request.checkBody('email', 'That email address is not valid!').notEmpty().isEmail();
     request.sanitizeBody('email').normalizeEmail({
@@ -21,7 +21,7 @@ exports.validateRegister = (request, response, next) => {
     request.checkBody('password-confirm', 'Confirmed Password cannot be blank!').notEmpty();
     request.checkBody('password-confirm', 'Oops! Your Passwords do not match!').equals(request.body.password);
 
-    const errors = request.validatonErrors();
+    const errors = request.validationErrors();
 
     if (errors) {
         request.flash('error', errors.map(err => err.msg));
@@ -30,6 +30,8 @@ exports.validateRegister = (request, response, next) => {
             body: request.body,
             flashes: request.flash()
         });
+        return;
     };
+    next();
 };
 

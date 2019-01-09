@@ -5,8 +5,9 @@ const userController = require('../controllers/userController');
 const { catchErrors } = require('../handlers/errorHandlers');
 
 router.get('/', catchErrors(storeController.getStores));
-router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
 router.get('/stores', catchErrors(storeController.getStores));
+router.get('/store/:slug', catchErrors(storeController.getStoreBySlug));
+router.get('/stores/:id/edit', catchErrors(storeController.editStore));
 router.get('/add', (storeController.addStore));
 router.post(
     '/add',
@@ -20,10 +21,10 @@ router.post(
     catchErrors(storeController.resize),
     catchErrors(storeController.updateStore)
 );
-router.get('/stores/:id/edit', catchErrors(storeController.editStore));
 router.get('/tags', catchErrors(storeController.getStoresByTag));
 router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
 router.get('/login', userController.login);
 router.get('/register', userController.register);
+router.post('/register', userController.validateRegister);
 
 module.exports = router;
