@@ -19,6 +19,7 @@ Full stack application using Node and MongoDB on the backend.
 * [Passport JS](http://www.passportjs.org/) -- Authentication middleware for Node.js
 * [Pug JS](https://pugjs.org/api/getting-started.html) --  High-performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers
 * [Sass](https://sass-lang.com/) -- CSS preprocessor
+* [Google Maps API](https://developers.google.com/maps/documentation/) - used for address autocomplete and static map images
 
 
 ## Setup
