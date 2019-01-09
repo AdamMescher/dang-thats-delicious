@@ -8,7 +8,7 @@ Useful Node Refresher
 
 ## About
 
-Full stack application using Node and MongoDB on the backend.
+Full stack application using Node and MongoDB on the backend and pug.js for the view layer.
 
 ## Technologies
 
