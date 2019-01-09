@@ -24,5 +24,6 @@ router.get('/stores/:id/edit', catchErrors(storeController.editStore));
 router.get('/tags', catchErrors(storeController.getStoresByTag));
 router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
 router.get('/login', userController.login);
+router.get('/register', userController.register);
 
 module.exports = router;
