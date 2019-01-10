@@ -764,7 +764,8 @@ label {
     width: 25px;
     fill: white; }
   .store__action--edit a {
-    border-bottom: 0; }
+    border-bottom: 0;
+    font-size: 3em; }
 
 .store__hero {
   position: relative;
