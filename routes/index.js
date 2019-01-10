@@ -24,13 +24,15 @@ router.post(
 );
 router.get('/tags', catchErrors(storeController.getStoresByTag));
 router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
-router.get('/login', userController.login);
 router.get('/register', userController.registerForm);
 router.post(
     '/register',
     userController.validateRegister,
     userController.register,
     authController.login
-);
+    );
+router.get('/login', userController.loginForm);
+router.post('/login', authController.login)
+router.get('/logout', authController.logout);
 
 module.exports = router;
