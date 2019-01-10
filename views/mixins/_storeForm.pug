@@ -5,21 +5,21 @@ mixin storeForm(store = {})
         class="card"
         enctype="multipart/form-data"
     )
-        label(for="name") Name
+        label(for="name") 📛 Name
         input(type="text" name="name" value=store.name)
-        label(for="description") Description
+        label(for="description") 📜 Description
         textarea(name="description")=store.description
-        label(for="photo") Photo
+        label(for="photo") 📷 Photo
             input(type="file" name="photo" id="photo" accept="image/gif, image/png, image/jpeg, image/webp")
             if store.photo
                 img(src=`/uploads/${store.photo}` alt=store.name width=200)
-        label(for="address") Address
+        label(for="address") 📍 Address
         input(type="text" id="address" name="location[address]" value=(store.location && store.location.address))
-        label(for="longitude") Address Latitude
+        label(for="longitude") 🗺️ Address Latitude
         input(for="text" id="latitude" name="location[coordinates][0]" value=(store.location && store.location.coordinates[0]))
-        label(for="latitude") Address Longitude
+        label(for="latitude") 🗺️ Address Longitude
         input(for="text" id="longitude" name="location[coordinates][1]" value=(store.location && store.location.coordinates[1]))
-        - const choices = ['Wifi', 'Open Late', 'Family Friendly', 'Vegetarian', 'Licensed']
+        - const choices = ['📡 Wifi', '🕰️ Open Late', '👪 Family Friendly', '🥗 Vegetarian', '™️ Licensed']
         - const tags = store.tags || []
         ul.tags
             each choice in choices
@@ -28,6 +28,6 @@ mixin storeForm(store = {})
                     label(for=choice) #{choice}
         input(
             type="submit"
-            value="Save →"
+            value="Save ➡️"
             class="button"
         )

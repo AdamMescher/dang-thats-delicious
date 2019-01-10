@@ -617,7 +617,12 @@ label {
   .nav__item {
     display: -ms-flexbox;
     display: flex; }
+  .nav--emoji {
+    line-height: 2.5rem;
+    font-size: 2em;
+    margin-bottom: 1rem; }
   .nav__link {
+    white-space: nowrap;
     background: #303030;
     color: white;
     border-right: 1px solid rgba(255, 255, 255, 0.1);

@@ -7,7 +7,7 @@ const storeSchema = new mongoose.Schema({
     name: {
         type: String,
         trim: true,
-        required: 'Please enter a store name!'
+        required: 'Please enter a resturant name!'
     },
     slug: String,
     description: {

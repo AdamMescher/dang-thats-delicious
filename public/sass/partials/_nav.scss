@@ -14,7 +14,13 @@
   &__item {
     display: flex;
   }
+  &--emoji {
+    line-height: 2.5rem;
+    font-size: 2em;
+    margin-bottom: 1rem;
+  }
   &__link {
+    white-space: nowrap;
     background: $black;
     color: white;
     border-right: 1px solid rgba(255,255,255,0.1);
