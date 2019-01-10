@@ -60,7 +60,7 @@ Full stack application using Node and MongoDB on the backend and pug.js for the 
 
 ### Add data/db directories
 
-```
+``` bash
 cd ~
 sudo mkdir -p data/db
 ```
