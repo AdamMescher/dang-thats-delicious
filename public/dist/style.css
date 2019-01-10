@@ -658,6 +658,12 @@ label {
       width: 200px;
       margin: 0; }
 
+.heart-icon {
+  font-size: 3em; }
+
+.logout-icon {
+  font-size: 2em; }
+
 @media all and (max-width: 1200px) {
   .nav__link {
     padding-left: 1rem;

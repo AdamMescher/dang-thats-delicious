@@ -12,3 +12,12 @@ exports.logout = (request, response) => {
     request.flash('success', 'You are now logged out! 👋');
     response.redirect('/');
 }
+
+exports.isLoggedIn = (request, response, next) => {
+    if (request.isAuthenticated()) {
+        next();
+        return;
+    }
+    request.flash('error', 'Oops! 😬 You must be logged in to do that!');
+    response.redirect('/login');
+}

@@ -32,7 +32,7 @@ exports.homePage = (request, response) => {
 }
 
 exports.addStore = (request, response) => {
-    response.render('editStore', { title: 'Add Store' });
+    response.render('editStore', { title: 'Add Resturant' });
 }
 
 exports.createStore = async (request, response) => {
@@ -52,7 +52,7 @@ exports.getStoreBySlug = async (request, response) => {
 
 exports.getStores = async (request, response) => {
     const stores = await Store.find();
-    response.render('stores', { title: 'Stores', stores });
+    response.render('stores', { title: 'Resturants', stores });
 }
 
 exports.editStore = async (request, response) => {
