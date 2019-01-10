@@ -4,7 +4,7 @@ Wes Bos [Learn Node Course](https://learnnode.com)
 
 Useful Node Refresher
 
-[Turing Express and Postgresql Lesson](http://frontend.turing.io/lessons/module-4/knex-postgres)
+[Turing Express and PostgreSQL Lesson](http://frontend.turing.io/lessons/module-4/knex-postgres)
 
 ## About
 
@@ -28,15 +28,11 @@ Full stack application using Node and MongoDB on the backend and pug.js for the 
 
 ### Install Latest Version of NVM
 
-```
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
-```
+`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
 
 ### Install Latest LTS Version
 
-```
-nvm install --lts
-```
+`nvm install --lts`
 
 ----------------------
 
@@ -44,32 +40,23 @@ nvm install --lts
 
 ### Navigate to root directory
 
-```
-cd ~
-```
+`cd ~`
+
 ### Import the MongoDB public GPG Key
 
-```
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5
-```
+`sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5`
 
 ### Add the deb to sources list
 
-```
-echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list
-```
+`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
 
 ### Reload local pkg database
 
-```
-sudo apt-get update
-```
+`sudo apt-get update`
 
 ### Run the Mongo install command
 
-```
-sudo apt-get install -y mongodb-org
-```
+`sudo apt-get install -y mongodb-org`
 
 ### Add data/db directories
 
@@ -82,30 +69,22 @@ sudo mkdir -p data/db
 
 In one terminal window, start the mongod service:
 
-```
-sudo mongod --dbpath ~/data/db
-```
+`sudo mongod --dbpath ~/data/db`
 
 In a new terminal window, connect to the mongod service:
 
-```
-mongo
-```
+`mongo`
 ---------------
 
 ## Sample Data
 
 To load sample data, run the following command in your terminal:
 
-```bash
-npm run sample
-```
+`npm run sample`
 
 If you have previously loaded in this data, you can wipe your database 100% clean with:
 
-```bash
-npm run blowitallaway
-```
+`npm run blowitallaway`
 
 That will populate 16 stores with 3 authors and 41 reviews. The logins for the authors are as follows:
 
