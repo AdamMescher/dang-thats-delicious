@@ -50,6 +50,6 @@ router.post(
     '/account/reset/:token',
     authController.confirmedPasswords,
     catchErrors(authController.update)
-)
+);
 
 module.exports = router;
