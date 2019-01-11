@@ -6,7 +6,7 @@ include mixins/_storeCard
 block content
     - const emojiList = { openLate: '🕰️', vegetarian: '🥗', familyFriendly: '👪', wifi: '🌐', licensed: '®️' }
     .inner
-        h2 #{`${ (tag) ? emojiList[tag.split(' ').join('').replace(/-/g, "").replace(/^\w/, c => c.toLowerCase())] + ' ' + tag : 'Tags'}`}
+        h2 #{`${ (tag) ? emojiList[tag.split(' ').join('').replace(/-/g, "").replace(/^\w/, c => c.toLowerCase())] + ' ' + tag : '🔖 Tags'}`}
         ul.tags
             each t in tags
                 li.tag
