@@ -37,7 +37,7 @@ exports.addStore = (request, response) => {
 
 exports.createStore = async (request, response) => {
     const store = await (new Store(request.body)).save();
-    request.flash('success', `Successfully created ${store.name}. Care to leave a review?`);
+    request.flash('success', `✔️ Successfully created ${store.name}. Care to leave a review?`);
     response.redirect(`/store/${store.slug}`);
 }
 
@@ -63,7 +63,7 @@ exports.editStore = async (request, response) => {
 exports.updateStore = async (request, response) => {
     request.body.location.type = 'Point';
     const store = await Store.findOneAndUpdate({ _id: request.params.id }, request.body, { new: true, runValidators: true}).exec();
-    request.flash('success', `Successfully updated <strong>${store.name}</strong>. <a href="/stores/${store.slug}">View Store →</a>`);
+    request.flash('success', `✔️ Successfully updated <strong>${store.name}</strong>. <a href="/stores/${store.slug}">View Store →</a>`);
     response.redirect(`/stores/${store._id}/edit`);
 }
 

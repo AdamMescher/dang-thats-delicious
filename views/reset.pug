@@ -1,0 +1,9 @@
+extends layout
+
+include mixins/_resetForm
+
+block content
+    .inner
+        form.form(method="POST")
+            h2 🔐 #{title}
+            +resetForm()
