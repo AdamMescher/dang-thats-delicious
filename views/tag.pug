@@ -2,14 +2,16 @@ extends layout
 
 include mixins/_storeCard
 
+
 block content
+    - const emojiList = { openLate: '🕰️', vegetarian: '🥗', familyFriendly: '👪', wifi: '🌐', licensed: '®️' }
     .inner
-        h2 #{tag || 'Tags'}
+        h2 #{`${emojiList[tag.split(' ').join('').replace(/-/g, "").replace(/^\w/, c => c.toLowerCase())] + ' ' + tag || 'Tags'}`}
         ul.tags
             each t in tags
                 li.tag
                     a.tag__link(href=`/tags/${t._id}` class=(t._id === tag ? 'tag__link--active' : ''))
-                        span.tag__text= t._id
+                        span.tag__text #{`${emojiList[t._id.split(' ').join('').replace(/-/g, "").replace(/^\w/, c => c.toLowerCase())]}`} #{t._id}
                         span.tag__count= t.count
         .stores
             each store in stores
