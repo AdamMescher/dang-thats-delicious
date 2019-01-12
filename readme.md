@@ -20,7 +20,7 @@ Full stack application using Node and MongoDB on the backend and pug.js for the 
 * [Pug JS](https://pugjs.org/api/getting-started.html) --  High-performance template engine heavily influenced by Haml and implemented with JavaScript for Node.js and browsers
 * [Sass](https://sass-lang.com/) -- CSS preprocessor
 *
-* [Google Maps API](https://developers.google.com/maps/documentation/)
+* [Google Maps API](https://developers.google.com/maps/documentation/) -- Build customized, agile experiences that bring the real world to your users with static and dynamic maps, Street View imagery, and 360° views.
   * Place Autocomplete -- You can use autocomplete to give your applications the type-ahead-search behavior of the Google Maps search field. When a user starts typing an address, autocomplete will fill in the rest.
   * Static Maps -- Creates your map based on URL parameters sent through a standard HTTP request and returns the map as an image you can display on your web page.
 * [Gravatar](https://en.gravatar.com/) -- An image that follows you from site to site appearing beside your name when you do things like comment or post on a blog. Avatars help identify your posts on blogs and web forums.
