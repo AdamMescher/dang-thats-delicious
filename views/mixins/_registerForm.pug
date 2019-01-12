@@ -1,12 +1,12 @@
 mixin registerForm()
     form.form(action="/register" method="POST")
-        h2 👤 Register
+        h2 👤 Register for a Now That's Delicious ID
         label(for="name") 📛 Name
-        input(type="text" name="name" required)
+        input(type="text" name="name" placeholder="Full Name" required)
         label(for="email") 📧 Email
-        input(type="email" name="email" required)
+        input(type="email" name="email" placeholder="Email" required)
         label(for="password") 🗝️ Password
-        input(type="password" name="password")
+        input(type="password" name="password" placeholder="Password")
         label(for="password-confirm") 🗝️ Confirm Password
-        input(type="password" name="password-confirm")
+        input(type="password" name="password-confirm" placeholder="Confirm Password")
         input.button(type="submit" value="Register ➡️")
