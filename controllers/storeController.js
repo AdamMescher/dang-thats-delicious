@@ -32,17 +32,18 @@ exports.homePage = (request, response) => {
 }
 
 exports.addStore = (request, response) => {
-    response.render('editStore', { title: 'Add Resturant' });
+    response.render('editStore', { title: '➕ Add Restaurant' });
 }
 
 exports.createStore = async (request, response) => {
+    request.body.author = request.user._id;
     const store = await (new Store(request.body)).save();
     request.flash('success', `✔️ Successfully created ${store.name}. Care to leave a review?`);
     response.redirect(`/store/${store.slug}`);
 }
 
 exports.getStoreBySlug = async (request, response) => {
-    const store = await Store.findOne({ slug: request.params.slug });
+    const store = await Store.findOne({ slug: request.params.slug }).populate('author');
     if (!store) {
         next();
         return;
@@ -52,12 +53,19 @@ exports.getStoreBySlug = async (request, response) => {
 
 exports.getStores = async (request, response) => {
     const stores = await Store.find();
-    response.render('stores', { title: 'Resturants', stores });
+    response.render('stores', { title: 'Restaurants', stores });
+}
+
+const confirmOwner = (store, user) => {
+    if (!store.author.equals(user._id)) {
+        throw Error('❌ You must own a store in order to edit it');
+    }
 }
 
 exports.editStore = async (request, response) => {
     const store = await Store.findOne({ _id: request.params.id });
-    response.render('editStore', { title: `Edit ${store.name}`, store });
+    confirmOwner(store, request.user);
+    response.render('editStore', { title: `✏️ Edit ${store.name}`, store });
 }
 
 exports.updateStore = async (request, response) => {

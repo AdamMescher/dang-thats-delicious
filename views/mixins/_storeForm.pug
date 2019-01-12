@@ -1,6 +1,6 @@
 mixin storeForm(store = {})
     form.form(action=`/add/${store._id || ''}` method="POST" class="card" enctype="multipart/form-data")
-        h2 🥙 Add a New Restaurant
+        h2 #{`${!store.name ? '🥑 Add a New Restaurant' : '📝 Update the details of ' + store.name}`}
         label(for="name") 📛 Name
         input(type="text" name="name" value=store.name)
         label(for="description") 📜 Description
