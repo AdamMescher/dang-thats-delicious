@@ -83,3 +83,17 @@ exports.getStoresByTag = async (request, response) => {
     const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
     response.render('tag', { tags, title: 'Tags', tag, stores });
 }
+
+exports.searchStores = async (request, response) => {
+    const stores = await Store
+        .find({
+            $text: {
+                $search: request.query.q
+            }
+        },
+        { score: { $meta: 'textScore' }})
+        .sort({
+            score: { $meta: 'textScore' }
+        })
+        .limit(5);
+}
