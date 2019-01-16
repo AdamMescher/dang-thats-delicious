@@ -55,6 +55,15 @@
   }
 }
 
+.heart-button {
+  border: none;
+  background: none;
+  font-size: 3em;
+}
+
+.heart-button:hover {
+  cursor: pointer;
+}
 
 .store__hero {
   position: relative;

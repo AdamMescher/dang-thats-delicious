@@ -3,6 +3,7 @@ const multer = require('multer');
 const jimp = require('jimp');
 const uuid = require('uuid');
 const Store = mongoose.model('Store');
+const User = mongoose.model('User');
 
 const multerOptions = {
     storage: multer.memoryStorage(),
@@ -121,4 +122,15 @@ exports.mapStores = async (request, response) => {
 
 exports.mapPage = (request, response) => {
     response.render('map', { title: '🗺️ Map' });
+}
+
+exports.heartStore = async (request, response) => {
+    const hearts = request.user.hearts.map(obj => obj.toString());
+    const operator = hearts.includes(request.params.id) ? '$pull' : '$addToSet';
+    const user = await User
+        .findByIdAndUpdate(request.user._id,
+            { [operator]: { hearts: request.params.id }},
+            { new: true }
+        );
+    response.json(user);
 }

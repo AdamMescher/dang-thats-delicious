@@ -1,0 +1,7 @@
+mixin heartForm(store)
+    form.heart(method="POST" action=`/api/v1/stores/${store._id}/heart`)
+        button.heart-button(type="submit" name="heart")
+            - const heartEmoji = ['🖤', '❤️']
+            - const heartStrings = user.hearts.map(obj => obj.toString())
+            - const heartStatus = heartStrings.includes(store._id.toString()) ? heartEmoji[1] : heartEmoji[0]
+            span.emoji-icon #{heartStatus}
