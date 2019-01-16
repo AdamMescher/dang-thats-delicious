@@ -96,4 +96,5 @@ exports.searchStores = async (request, response) => {
             score: { $meta: 'textScore' }
         })
         .limit(5);
+        response.json(stores);
 }

@@ -19,6 +19,10 @@ body {
     .inner {
       padding: 2rem; } }
 
+@media (max-width: 900px) {
+  .nav--text {
+    display: none; } }
+
 html {
   box-sizing: border-box; }
 
@@ -534,7 +538,7 @@ label {
     z-index: 5;
     left: 0; }
   .search__input {
-    font-size: 30px;
+    font-size: 20px;
     background: none;
     color: white;
     outline: 0;
