@@ -1,13 +1,16 @@
 import axios from 'axios';
+import { $ } from './bling';
 
 function ajaxHeart(e) {
     e.preventDefault();
-    console.log(this.action);
     axios
         .post(this.action)
         .then(response => {
-            const isHearted = this.heart.classList.toggle('heart__button--hearted');
-            console.log(isHearted);
+            const notHearted = `<button class="heart-button" type="submit" name="heart"><span class="emoji-icon">🖤</span></button>`;
+            const hearted = `<button class="heart-button" type="submit" name="heart"><span class="emoji-icon">❤️</span></button>`;
+            const isHearted = this.innerHTML.includes('❤️');
+            isHearted ? this.innerHTML = notHearted : this.innerHTML = hearted;
+            $('.heart-count').textContent = response.data.hearts.length;
         })
         .catch(err => console.error(err));
 }

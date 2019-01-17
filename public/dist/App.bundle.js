@@ -998,16 +998,20 @@ var _axios = __webpack_require__(1);
 
 var _axios2 = _interopRequireDefault(_axios);
 
+var _bling = __webpack_require__(3);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function ajaxHeart(e) {
     var _this = this;
 
     e.preventDefault();
-    console.log(this.action);
     _axios2.default.post(this.action).then(function (response) {
-        var isHearted = _this.heart.classList.toggle('heart__button--hearted');
-        console.log(isHearted);
+        var notHearted = '<button class="heart-button" type="submit" name="heart"><span class="emoji-icon">\uD83D\uDDA4</span></button>';
+        var hearted = '<button class="heart-button" type="submit" name="heart"><span class="emoji-icon">\u2764\uFE0F</span></button>';
+        var isHearted = _this.innerHTML.includes('❤️');
+        isHearted ? _this.innerHTML = notHearted : _this.innerHTML = hearted;
+        (0, _bling.$)('.heart-count').textContent = response.data.hearts.length;
     }).catch(function (err) {
         return console.error(err);
     });
@@ -2821,7 +2825,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _autocomplete2.default)((0, _bling.$)('#address'), (0, _bling.$)('#longitude'), (0, _bling.$)('#latitude'));
 (0, _typeAhead2.default)((0, _bling.$)('.search'));
 (0, _map2.default)((0, _bling.$)('#map'));
-(0, _bling.$$)('.form.heart').on('submit', _heart2.default);
+(0, _bling.$$)('form.heart').on('submit', _heart2.default);
 
 /***/ })
 /******/ ]);

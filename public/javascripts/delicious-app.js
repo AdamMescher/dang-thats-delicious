@@ -8,4 +8,4 @@ import ajaxHeart from './modules/heart';
 autocomplete($('#address'), $('#longitude'), $('#latitude'));
 typeAhead($('.search'));
 makeMap($('#map'));
-$$('.form.heart').on('submit', ajaxHeart);
+$$('form.heart').on('submit', ajaxHeart);
