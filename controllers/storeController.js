@@ -54,7 +54,7 @@ exports.getStoreBySlug = async (request, response) => {
 
 exports.getStores = async (request, response) => {
     const stores = await Store.find();
-    response.render('stores', { title: 'Restaurants', stores });
+    response.render('stores', { title: '🥡 Restaurants', stores });
 }
 
 const confirmOwner = (store, user) => {
@@ -82,7 +82,7 @@ exports.getStoresByTag = async (request, response) => {
     const tagsPromise = Store.getTagsList();
     const storesPromise = Store.find({ tags: tagQuery })
     const [tags, stores] = await Promise.all([tagsPromise, storesPromise]);
-    response.render('tag', { tags, title: 'Tags', tag, stores });
+    response.render('tag', { tags, title: '🔖Tags', tag, stores });
 }
 
 exports.searchStores = async (request, response) => {
@@ -133,4 +133,12 @@ exports.heartStore = async (request, response) => {
             { new: true }
         );
     response.json(user);
+}
+
+exports.getHearts = async (request, response) => {
+    if (!user) return
+    const stores = await Store.find({
+        _id: { $in: request.user.hearts }
+    });
+    response.render('stores', { title: '🧡 Your Favorites', stores });
 }
