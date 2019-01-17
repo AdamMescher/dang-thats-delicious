@@ -44,7 +44,7 @@ exports.createStore = async (request, response) => {
 }
 
 exports.getStoreBySlug = async (request, response) => {
-    const store = await Store.findOne({ slug: request.params.slug }).populate('author');
+    const store = await Store.findOne({ slug: request.params.slug }).populate('author reviews');
     if (!store) {
         next();
         return;
