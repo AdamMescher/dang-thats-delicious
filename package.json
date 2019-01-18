@@ -3,10 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": ">= 7.6.0"
-  },
-  "now": {
-    "dotenv": "variables.env.now"
+    "node": "10.x"
   },
   "scripts": {
     "start": "node ./start.js",
