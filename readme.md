@@ -1,14 +1,11 @@
 # dang-thats-delicious
 
-Wes Bos [Learn Node Course](https://learnnode.com)
-
-Useful Node Refresher
-
-[Turing Express and PostgreSQL Lesson](http://frontend.turing.io/lessons/module-4/knex-postgres)
 
 ## About
 
 Full stack application using Node and MongoDB on the backend and pug.js for the view layer.
+
+[Live on Heroku](https://dangdelicious.herokuapp.com/)
 
 ## Technologies
 
@@ -25,60 +22,10 @@ Full stack application using Node and MongoDB on the backend and pug.js for the 
   * Static Maps -- Creates your map based on URL parameters sent through a standard HTTP request and returns the map as an image you can display on your web page.
 * [Gravatar](https://en.gravatar.com/) -- An image that follows you from site to site appearing beside your name when you do things like comment or post on a blog. Avatars help identify your posts on blogs and web forums.
 
-
 ## Setup
-
-[Node Setup Instructions](https://github.com/creationix/nvm)
-
-### Install Latest Version of NVM
-
-`curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash`
-
-### Install Latest LTS Version
-
-`nvm install --lts`
-
-----------------------
-
-[WSL MongoDB Setup Instructions](https://gist.github.com/Mikeysax/cc86c30903727c556bcce960f7e4d59b)
-
-### Navigate to root directory
-
-`cd ~`
-
-### Import the MongoDB public GPG Key
-
-`sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 2930ADAE8CAF5059EE73BB4B58712A2291FA4AD5`
-
-### Add the deb to sources list
-
-`echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/3.6 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.6.list`
-
-### Reload local pkg database
-
-`sudo apt-get update`
-
-### Run the Mongo install command
-
-`sudo apt-get install -y mongodb-org`
-
-### Add data/db directories
-
-``` bash
-cd ~
-sudo mkdir -p data/db
-```
-
-### Run mongod server and mongo shell
-
-In one terminal window, start the mongod service:
-
-`sudo mongod --dbpath ~/data/db`
-
-In a new terminal window, connect to the mongod service:
-
-`mongo`
----------------
+1. Clone Repo
+2. ```npm install``
+3. ```npm run dev``
 
 ## Sample Data
 
