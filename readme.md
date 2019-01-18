@@ -28,9 +28,8 @@ Full Stack Yelp clone built with Node, Express, and Mongo on the backend and pug
 * [Gravatar](https://en.gravatar.com/) -- An image that follows you from site to site appearing beside your name when you do things like comment or post on a blog. Avatars help identify your posts on blogs and web forums.
 
 ## Setup
-1. Clone Repo
-2. ```npm install``
-3. ```npm run dev``
+1. `npm install`
+2. `npm run dev`
 
 ## Sample Data
 
