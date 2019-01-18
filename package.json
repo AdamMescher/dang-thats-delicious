@@ -14,8 +14,11 @@
     "sample": "node ./data/load-sample-data.js",
     "blowitallaway": "node ./data/load-sample-data.js --delete"
   },
-  "browserslist": [ "last 3 versions" ],
+  "browserslist": [
+    "last 3 versions"
+  ],
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "axios": "0.15.3",
     "body-parser": "1.17.1",
     "connect-flash": "0.1.1",
