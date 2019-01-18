@@ -53,8 +53,21 @@ exports.getStoreBySlug = async (request, response) => {
 }
 
 exports.getStores = async (request, response) => {
-    const stores = await Store.find();
-    response.render('stores', { title: '🥡 Restaurants', stores });
+    const page = request.params.page || 1;
+    const limit = 4;
+    const skip = (page * limit) - limit;
+    const storesPromise = Store.find().skip(skip).limit(limit).sort({ created: 'desc' });
+    const countPromise = Store.count();
+    const [stores, count] = await Promise.all([storesPromise, countPromise]);
+    const pages = Math.ceil(count / limit);
+
+    if (!stores.length && skip) {
+        request.flash('info', `ℹ️ You requested page ${page} but that page doesn't exist. You've been redirected to the last page, ${pages}`)
+        response.redirect(`/stores/page/${pages}`);
+        return;
+    }
+
+    response.render('stores', { title: '🥡 Restaurants', stores, page, pages, count });
 }
 
 const confirmOwner = (store, user) => {
