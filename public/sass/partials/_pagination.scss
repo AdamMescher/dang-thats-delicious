@@ -7,23 +7,44 @@
   box-shadow: $shad;
   &__next {
     flex: 0 0 auto;
-    padding: 1rem 3rem 1rem 1rem;
-    a:after {
-      margin-left: 1rem;
-      content: '→'
-    }
+    padding: 1rem 5rem 1rem 1rem;
+    margin-right: 10rem;
   }
   &__prev {
     flex: 0 0 auto;
-    padding: 1rem 1rem 1rem 3rem;
-    a:before {
-      margin-right: 1rem;
-      content: '←'
-    }
+    padding: 1rem 1rem 1rem 5rem;
   }
   &__text {
+    font-size: 2em;
     flex: 3 0 auto;
     padding: 1rem;
     text-align: center;
+  }
+}
+
+.prev,
+.next {
+  font-size: 1.5em;
+}
+
+.prev {
+  margin-left: 4rem;
+}
+
+.next {
+  margin-right: 4rem;
+}
+
+@media(max-width: 900px) {
+  .pagination__text p {
+    font-size: 0.5em;
+  }
+  .prev {
+    font-size: 0.8em;
+    margin-left: 2rem;
+  }
+  .next {
+    font-size: 0.8em;
+    margin-right: 2rem;
   }
 }

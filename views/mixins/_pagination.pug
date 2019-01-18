@@ -1,9 +1,8 @@
 mixin pagination(page, pages, count)
     .pagination
-        .pagination__prev
-            if page > 1
-                a(href=`/store/page/${page - 1}`) Prev
+        if page > 1
+            a.prev(href=`/stores/page/${page - 1}`) ⬅️ Prev
         .pagination__text
-            p Page #{page} of #{pages} - #{count} total results
+            p Page #{page} of #{pages}  (#{count} total results)
         if page < pages
-            a(href=`/stores/page/${parseFloat(page) + 1}`) Next
+            a.next(href=`/stores/page/${parseFloat(page) + 1}`) Next ➡️

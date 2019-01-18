@@ -6,7 +6,6 @@ body {
   background: #262161;
   background: #efefef; }
   body:before {
-    content: '';
     display: block;
     background: linear-gradient(90deg, #48ded4 0%, #a026bf 20%, #e82c75 60%, #FFC40E 85%, #48ded4 95%);
     height: 10px;
@@ -1093,22 +1092,38 @@ label {
   .pagination__next {
     -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-    padding: 1rem 3rem 1rem 1rem; }
-    .pagination__next a:after {
-      margin-left: 1rem;
-      content: '\2192'; }
+    padding: 1rem 5rem 1rem 1rem;
+    margin-right: 10rem; }
   .pagination__prev {
     -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-    padding: 1rem 1rem 1rem 3rem; }
-    .pagination__prev a:before {
-      margin-right: 1rem;
-      content: '\2190'; }
+    padding: 1rem 1rem 1rem 5rem; }
   .pagination__text {
+    font-size: 2em;
     -ms-flex: 3 0 auto;
         flex: 3 0 auto;
     padding: 1rem;
     text-align: center; }
+
+.prev,
+.next {
+  font-size: 1.5em; }
+
+.prev {
+  margin-left: 4rem; }
+
+.next {
+  margin-right: 4rem; }
+
+@media (max-width: 900px) {
+  .pagination__text p {
+    font-size: 0.5em; }
+  .prev {
+    font-size: 0.8em;
+    margin-left: 2rem; }
+  .next {
+    font-size: 0.8em;
+    margin-right: 2rem; } }
 
 .map {
   padding: 20px;
