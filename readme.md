@@ -3,7 +3,7 @@
 
 ## About
 
-Full stack application using Node and MongoDB on the backend and pug.js for the view layer.
+Full Stack Yelp clone built with Node, Express, and Mongo on the backend and pug.js for the view layer.
 
 [Live on Heroku](https://dangdelicious.herokuapp.com/)
 
