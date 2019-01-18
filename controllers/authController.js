@@ -7,7 +7,7 @@ const User = mongoose.model('User');
 
 exports.login = passport.authenticate('local', {
     failureRedirect: '/login',
-    failureFlash: 'Failed Login!',
+    failureFlash: '⛔ The username and password you provided does not match our records.',
     successRedirect: '/',
     successFlash: '🔓 You are now logged in! '
 });
