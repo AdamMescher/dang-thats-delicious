@@ -9,6 +9,8 @@ Full stack application using Node and MongoDB on the backend and pug.js for the 
 
 ![dangdelicious](https://user-images.githubusercontent.com/6540117/51416428-bdeb2900-1b36-11e9-9e0f-2c4602b4c0db.png)
 
+![dangdelicious-mobile](https://user-images.githubusercontent.com/6540117/51416499-00ad0100-1b37-11e9-8084-b7bcc610e82b.png)
+
 
 ## Technologies
 
