@@ -5,7 +5,7 @@
 
 Full Stack Yelp clone built with Node, Express, and Mongo on the backend and pug.js for the view layer.
 
-[Live on Heroku](https://dangdelicious.herokuapp.com/)
+### [Live on Heroku](https://dangdelicious.herokuapp.com/)
 
 ![dangdelicious](https://user-images.githubusercontent.com/6540117/51416428-bdeb2900-1b36-11e9-9e0f-2c4602b4c0db.png)
 
