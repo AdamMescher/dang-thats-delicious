@@ -142,3 +142,8 @@ exports.getHearts = async (request, response) => {
     });
     response.render('stores', { title: '🧡 Your Favorites', stores });
 }
+
+exports.getTopStores = async (request, response) => {
+    const stores = await Store.getTopStores();
+    response.render('topStores', {stores, title: '🏆 Top Restaurants '});
+}

@@ -63,6 +63,7 @@ router.post(
     authController.isLoggedIn,
     catchErrors(reviewController.addReview)
 );
+router.get('/top', catchErrors(storeController.getTopStores));
 
 router.get('/api/v1/search', catchErrors(storeController.searchStores));
 router.get('/api/v1/stores/near', catchErrors(storeController.mapStores));
