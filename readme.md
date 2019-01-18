@@ -7,6 +7,9 @@ Full stack application using Node and MongoDB on the backend and pug.js for the 
 
 [Live on Heroku](https://dangdelicious.herokuapp.com/)
 
+![dangdelicious](https://user-images.githubusercontent.com/6540117/51416428-bdeb2900-1b36-11e9-9e0f-2c4602b4c0db.png)
+
+
 ## Technologies
 
 * [Node](https://nodejs.org/en/) -- JavaScript runtime built on Chrome’s V8 JavaScript engine that uses an event-driven, non-blocking I/O model that makes it lightweight and efficient.
