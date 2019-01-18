@@ -152,7 +152,7 @@ exports.getHearts = async (request, response) => {
     const stores = await Store.find({
         _id: { $in: request.user.hearts }
     });
-    response.render('stores', { title: '🧡 Your Favorites', stores });
+    response.render('stores', { title: '❤️ Your Favorites', stores });
 }
 
 exports.getTopStores = async (request, response) => {
