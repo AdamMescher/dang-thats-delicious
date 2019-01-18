@@ -16,7 +16,9 @@ body {
   margin: 0 auto; }
   @media all and (max-width: 900px) {
     .inner {
-      padding: 2rem; } }
+      padding: 2rem; }
+      .inner h2 {
+        font-size: 2.5em; } }
 
 @media (max-width: 900px) {
   .nav--text {
