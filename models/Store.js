@@ -84,17 +84,20 @@ storeSchema.statics.getTopStores = function() {
             }
         },
         // Filter for only items that have 2 or more reviews
-        { $match: {
-                'reviews.1': { $exists: true }
-            }
-        },
+        { $match: { 'reviews.1': { $exists: true }}},
         // Add the average reviews field
-        {},
+        { $project: {
+            photo: '$$ROOT.photo',
+            name: '$$ROOT.name',
+            reviews: '$$ROOT.reviews',
+            slug: '$$ROOT.slug',
+            averageRating: { $avg: '$reviews.rating' }
+        }},
         // Sort by new avg reviews field
-        {},
+        { $sort: { averageRating: -1 }},
         // Limit to 10 at most
-        {}
-    ])
+        { $limit: 10 }
+    ]);
 }
 
 storeSchema.virtual('reviews', {
@@ -102,5 +105,13 @@ storeSchema.virtual('reviews', {
     localField: '_id',
     foreignField: 'store'
 });
+
+function autoPopulate(next) {
+    this.populate('reviews');
+    next();
+}
+
+storeSchema.pre('find', autoPopulate);
+storeSchema.pre('findOne', autoPopulate);
 
 module.exports = mongoose.model('Store', storeSchema);
