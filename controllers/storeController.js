@@ -149,7 +149,6 @@ exports.heartStore = async (request, response) => {
 }
 
 exports.getHearts = async (request, response) => {
-    if (!user) return
     const stores = await Store.find({
         _id: { $in: request.user.hearts }
     });
