@@ -30,7 +30,5 @@ exports.send = async (options) => {
         text,
         html
     };
-    const sendMail = sgMail.send(msg);
-
-    return sendMail(mailOptions);
+    return sgMail.send(msg);
 }
