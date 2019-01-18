@@ -1,5 +1,6 @@
 {
   "name": "dang-thats-delicious",
+  "description": "I built Yelp, but not as good. Probably because of my limited time and budget compared to their engineering team. Built with Node, Express, and Mongo on the backend and Pug.js on the frontend.",
   "version": "0.0.1",
   "private": true,
   "engines": {
@@ -11,9 +12,9 @@
     "dev": "concurrently \"npm run watch\" \"npm run assets\" --names \"💻,📦\" --prefix name",
     "assets": "webpack -w --display-max-modules 0",
     "sample": "node ./data/load-sample-data.js",
-    "blowitallaway": "node ./data/load-sample-data.js --delete",
+    "blowitallaway": "node ./data/load-sample-data.js --delete"
   },
-  "browserslist": "last 3 versions",
+  "browserslist": [ "last 3 versions" ],
   "dependencies": {
     "axios": "0.15.3",
     "body-parser": "1.17.1",
